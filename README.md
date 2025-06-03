@@ -9,8 +9,8 @@ This tool sets up a snakemake workflow folder structure with a README generated 
 1. Clone or download the folder:
 
    ```bash
-   git clone <your_repo_url>  # or manually copy the files
-   cd CreateProjectTool
+   git clone <repo_url>  # or manually copy the files
+   cd CreateSnakemakeWorkflowDir
    ```
 
 2. Make the installer executable:
@@ -45,4 +45,4 @@ This tool sets up a snakemake workflow folder structure with a README generated 
 
 6. To update:
 
-   Just reinstall the updated package again.
+   Just reinstall the updated package.
