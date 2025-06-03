@@ -38,22 +38,33 @@ def main():
     for sub in subfolders:
         os.makedirs(os.path.join(project_name, sub), exist_ok=True)
 
+    # Write Snakefile inside the project folder
+    snakefile_path = os.path.join(project_name, "Snakefile")
+    with open(snakefile_path, "w") as sf:
+        sf.write("# Snakefile for your workflow\n\nrule all:\n    input:\n        # Add your final targets here\n")
+
+    # Write an empty config.yaml in the config folder
+    config_path = os.path.join(project_name, "config", "config.yaml")
+    with open(config_path, "w") as cf:
+        cf.write("# Configuration file for the workflow\n")
+
     # Prepare README content
     now = datetime.now().strftime("%Y-%m-%d %I:%M:%S %p")
     readme_content = (
         f"# {project_name}\n\n"
         f"**Author:** {author_name}\n\n"
         f"**Date:** {now}\n\n"
-        f"**Description:** {purpose}\n"
+        f"**Description:**\n{purpose}\n"
     )
 
-    # Write to README.md
+    # Write README.md
     readme_path = os.path.join(project_name, "README.md")
     with open(readme_path, "w") as f:
         f.write(readme_content)
 
-    print(f"Project folder '{project_name}' created successfully with README.md.")
+    print(f"✅ Workflow folder '{project_name}' created successfully.")
+    print(f"📄 Snakefile created in: {snakefile_path}")
+    print(f"⚙️  config.yaml created in: {config_path}")
 
 if __name__ == "__main__":
     main()
-
